@@ -16,7 +16,6 @@ app.post('/api/products', validateJWT, createProduct);
 app.post('/api/users', createUser);
 app.post('/api/login', login);
 
-const PORT = 3000;
+const PORT = 3001;
 
 app.listen(PORT, () => console.log(`Conectado na porta ${PORT}`));
-

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "test": "mocha ./tests/**/*$NAME*.test.js --exit"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
