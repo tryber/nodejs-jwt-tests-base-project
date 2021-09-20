@@ -19,3 +19,5 @@ app.post('/api/login', login);
 const PORT = 3001;
 
 app.listen(PORT, () => console.log(`Conectado na porta ${PORT}`));
+
+module.exports = app;
