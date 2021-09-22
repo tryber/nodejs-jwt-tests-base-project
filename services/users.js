@@ -10,13 +10,13 @@ const jwtConfig = {
 
 const findUserService = async (username, password) => {
   if (!username || !password) return (
-    { status: 401, message: 'É necessário usuário e senha para fazer login' }
+    { status: 401, message: 'É necessário pessoa usuária e senha para fazer login' }
   );
 
   const userSearch = await findUser(username);
 
   if (!userSearch || userSearch.password !== password) return (
-    { status: 401, message: 'Usuário não existe ou senha inválida' }
+    { status: 401, message: 'Pessoa usuária não existe ou senha inválida' }
   );
 
   const { password: passBD, ...userWithoutPassword } = userSearch;
