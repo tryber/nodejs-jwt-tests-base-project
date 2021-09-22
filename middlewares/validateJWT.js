@@ -11,14 +11,10 @@ const validateJWT = async (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, segredo);
-    const user = await findUser(decoded.data.username);
-
-    if (!user) return res.status(401).json(
-      { message: 'Erro ao procurar usuario do token.' }
-    );
+    const user = decoded.data;
 
     req.user = user;
-    next();
+    return next();
   } catch (_err) {
     return res.status(401).json({ message: 'Erro: Seu token é inválido.' });
   }
